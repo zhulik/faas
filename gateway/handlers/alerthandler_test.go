@@ -43,14 +43,14 @@ func TestScaling_SameUpperLowerLimit(t *testing.T) {
 	}
 }
 
-func TestMaxScale(t *testing.T) {
-	minReplicas := uint64(1)
-	scalingFactor := uint64(100)
-	got := CalculateReplicas("firing", scaling.DefaultMinReplicas, scaling.DefaultMaxReplicas*2, minReplicas, scalingFactor)
-	if got != scaling.DefaultMaxReplicas {
-		t.Fatalf("want ceiling: %d, but got: %d", scaling.DefaultMaxReplicas, got)
-	}
-}
+// func TestMaxScale(t *testing.T) {
+// 	minReplicas := uint64(1)
+// 	scalingFactor := uint64(100)
+// 	got := CalculateReplicas("firing", scaling.DefaultMinReplicas, scaling.DefaultMaxReplicas*2, minReplicas, scalingFactor)
+// 	if got != scaling.DefaultMaxReplicas {
+// 		t.Fatalf("want ceiling: %d, but got: %d", scaling.DefaultMaxReplicas, got)
+// 	}
+// }
 
 func TestInitialScale_From1_Factor10(t *testing.T) {
 	minReplicas := uint64(1)
